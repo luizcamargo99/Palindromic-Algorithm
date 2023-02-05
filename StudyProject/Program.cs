@@ -1,9 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using StudyProject;
 
-
-
-var resultado = BenchmarkRunner.Run<BenchmarkPalindrome>();
+var result = BenchmarkRunner.Run<BenchmarkPalindrome>();
 
 
 
