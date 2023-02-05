@@ -7,7 +7,7 @@ Console.WriteLine(IsPalindrome("O trote torto")); // true
 
 Console.WriteLine(IsPalindrome("amor")); // false
 Console.WriteLine(IsPalindrome("celular")); // false
-Console.WriteLine(IsPalindrome("maradm")); // false
+Console.WriteLine(IsPalindrome("caneta")); // false
 Console.WriteLine(IsPalindrome("pc")); // false
 Console.WriteLine(IsPalindrome("abac")); // false
 
@@ -20,13 +20,13 @@ bool IsPalindrome(string str)
 
     for (int i = 0; i < arrayChar.Length; i++)
     {
-        if (halfLength < (i + 1))
+        if (ComparasionEnded(halfLength, i))
             break;
 
         char currentLetter = arrayChar[i];
         char comparisionLetter = arrayChar[GetLastIndex(arrayChar.Length) - i];
 
-        if (currentLetter != comparisionLetter)
+        if (IsDifferentChar(currentLetter, comparisionLetter))
         {
             result = false;
             break;
@@ -36,5 +36,9 @@ bool IsPalindrome(string str)
     return result;
 }
 
+bool ComparasionEnded(int halfLength, int currentIndex) => halfLength < (currentIndex + 1);
+
 int GetLastIndex(int length) => length - 1;
+
+bool IsDifferentChar(char valueOne, char valueTwo) => valueOne != valueTwo;
 
