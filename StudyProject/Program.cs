@@ -15,7 +15,7 @@ bool IsPalindrome(string str)
 {
     bool result = true;
     string strHandled = str.ToLower().Replace(" ", string.Empty);
-    char[] arrayChar = strHandled.ToArray();
+    char[] arrayChar = strHandled.ToCharArray();
     int halfLength = arrayChar.Length / 2;
 
     for (int i = 0; i < arrayChar.Length; i++)
