@@ -1,6 +1,4 @@
-﻿using BenchmarkDotNet.Attributes;
-
-namespace StudyProject;
+﻿namespace StudyProject;
 
 internal static class StringExtension
 {
@@ -11,11 +9,8 @@ internal static class StringExtension
         char[] arrayChar = strHandled.ToCharArray();
         int halfLength = arrayChar.Length / 2;
 
-        for (int i = 0; i < arrayChar.Length; i++)
+        for (int i = 0; i < halfLength; i++)
         {
-            if (ComparasionEnded(halfLength, i))
-                break;
-
             char currentLetter = arrayChar[i];
             char comparisionLetter = arrayChar[GetLastIndex(arrayChar.Length) - i];
 
@@ -28,8 +23,6 @@ internal static class StringExtension
 
         return result;
     }
-
-    static bool ComparasionEnded(int halfLength, int currentIndex) => halfLength < (currentIndex + 1);
 
     static int GetLastIndex(int length) => length - 1;
 
